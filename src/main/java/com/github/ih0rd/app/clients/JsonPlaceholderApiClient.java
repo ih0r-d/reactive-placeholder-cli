@@ -22,15 +22,12 @@ public interface JsonPlaceholderApiClient {
     Flux<ResponseEntity<List<Post>>> getUserPosts(@PathVariable int userId);
 
     @GetExchange("/users/{userId}/albums")
-    Flux<ResponseEntity<Album>> getUserAlbums(@PathVariable int userId);
+    Flux<ResponseEntity<List<Album>>> getUserAlbums(@PathVariable int userId);
 
     @GetExchange("/users/{userId}/todos")
-    Flux<ResponseEntity<ToDo>> getUserToDos(@PathVariable int userId);
-
-    @GetExchange("/comments")
-    Flux<ResponseEntity<Comment>> getCommentsByPostId(@RequestParam int postId);
+    Flux<ResponseEntity<List<ToDo>>> getUserToDos(@PathVariable int userId);
 
     @GetExchange("/albums/{albumId}/photos")
-    Flux<ResponseEntity<Album>> getAlbumPhotos(@PathVariable int albumId);
+    Flux<ResponseEntity<List<AlbumPhoto>>> getAlbumPhotos(@PathVariable int albumId);
 }
 
